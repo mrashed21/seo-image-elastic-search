@@ -1,12 +1,11 @@
+import { env_config } from "@/config/env-config";
+import { cookie_utils } from "@/utils/cookie";
+import { IJwtPayload, jwt_token } from "@/utils/jwt";
 import { NextFunction, Request, Response } from "express";
 import status from "http-status";
-import { env_config } from "../config/env-config";
 import api_error from "../helper/api-error";
 import { user_role } from "../modules/auth/auth.interface";
 import { user as user_model } from "../modules/auth/auth.model";
-import { cookie_utils } from "../utils/cookie";
-import { IJwtPayload, jwt_token } from "../utils/jwt";
-
 export const check_auth =
   (...authRoles: (typeof user_role)[keyof typeof user_role][]) =>
   async (req: Request, res: Response, next: NextFunction) => {

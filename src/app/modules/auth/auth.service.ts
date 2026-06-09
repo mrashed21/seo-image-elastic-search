@@ -1,13 +1,13 @@
 import api_error from "@/app/helper/api-error";
+import { auth } from "@/lib/auth";
+import { IJwtPayload } from "@/utils/jwt";
+import { token_utils } from "@/utils/token";
 import bcrypt from "bcrypt";
 import httpStatus from "http-status";
-import { IJwtPayload } from "../../utils/jwt";
-import { token_utils } from "../../utils/token";
 import { otp_service } from "../otp/opt.service";
 import { otp_types } from "../otp/otp.interface";
 import { IUserModel } from "./auth.interface";
 import { user } from "./auth.model";
-import { auth } from "@/app/lib/auth";
 
 const build_auth_payload = (user_exists: IUserModel): IJwtPayload => ({
   _id: user_exists._id.toString(),

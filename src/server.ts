@@ -1,6 +1,6 @@
 import app from "./app";
-import { env_config } from "./app/config/env-config";
-import { connectDB, connectMongoose } from "./app/lib/mongodb";
+import { env_config } from "./config/env-config";
+import { connectDB, connectMongoose } from "./lib/mongodb";
 
 const banner = (port: number | string) => {
   const url = `http://localhost:${port}`;

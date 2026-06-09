@@ -1,6 +1,7 @@
-import { env_config } from "@/app/config/env-config";
+
 import api_error from "@/app/helper/api-error";
-import { send_email } from "@/app/utils/send-email";
+import { env_config } from "@/config/env-config";
+import { send_email } from "@/utils/send-email";
 import bcrypt from "bcryptjs";
 import { randomInt } from "crypto";
 import httpStatus from "http-status";

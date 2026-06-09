@@ -1,5 +1,5 @@
+import { user_role } from "@/app/modules/auth/auth.interface";
 import jwt, { JwtPayload, SignOptions } from "jsonwebtoken";
-import { user_role } from "../modules/auth/auth.interface";
 
 export interface IJwtPayload extends JwtPayload {
   _id: string;

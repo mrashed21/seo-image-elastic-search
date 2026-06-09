@@ -1,10 +1,10 @@
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import express, { Application } from "express";
-import { cors_config } from "./app/config/cors-config";
 import { global_error } from "./app/middleware/global-error";
 import not_found from "./app/middleware/not-found";
 import router from "./app/routes/router";
+import { cors_config } from "./config/cors-config";
 const app: Application = express();
 
 app.use(cors(cors_config));

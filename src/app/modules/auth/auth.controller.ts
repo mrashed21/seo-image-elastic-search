@@ -2,8 +2,8 @@ import api_error from "@/app/helper/api-error";
 import catch_async from "@/app/helper/catch-async";
 import send_response from "@/app/helper/send-response";
 import { get_request_info } from "@/app/middleware/request.info";
-import { cookie_utils } from "@/app/utils/cookie";
-import { token_utils } from "@/app/utils/token";
+import { cookie_utils } from "@/utils/cookie";
+import { token_utils } from "@/utils/token";
 import { Request, Response } from "express";
 import status from "http-status";
 import { auth_service } from "./auth.service";
@@ -13,15 +13,14 @@ export const auth_controller = {
   register: catch_async(async (req: Request, res: Response) => {
     const request_data = get_request_info(req);
 
-     const payload: any = {
-      ...req.body
+    const payload: any = {
+      ...req.body,
     };
 
     if (req.file?.path) {
       payload.user_profile_image = req.file.path;
     }
 
-    
     const result = await auth_service.register(payload, {
       ...request_data,
       request_device: request_data.request_device

@@ -1,4 +1,4 @@
-import { zod_boolean_from_formdata } from "@/app/utils/zod-helpers";
+import { zod_boolean_from_formdata } from "@/utils/zod-helpers";
 import z from "zod";
 
 const object_id_regex = /^[0-9a-fA-F]{24}$/;
@@ -211,7 +211,7 @@ export const create_product_schema = z
     total_wishlist: positive_optional_number_field(),
 
     meta: product_meta_schema.optional(),
-    
+
     admin_published_id: optional_object_id_field(),
     admin_updated_id: optional_object_id_field(),
 

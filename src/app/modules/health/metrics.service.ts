@@ -1,4 +1,4 @@
-import { db } from "@/app/lib/mongodb";
+import { db } from "@/lib/mongodb";
 import { getSystemMetrics } from "./system-metrics";
 
 class MetricsService {

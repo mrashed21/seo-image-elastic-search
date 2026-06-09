@@ -1,10 +1,10 @@
-import { env_config } from "@/config/env-config";
 import dotenv from "dotenv";
 dotenv.config();
 
 import { MongoClient } from "mongodb";
 import mongoose from "mongoose";
-import { user } from "../modules/auth/auth.model";
+import { user } from "../app/modules/auth/auth.model";
+import { env_config } from "../config/env-config";
 
 const uri = env_config.DATABASE_URL!;
 const client = new MongoClient(uri);

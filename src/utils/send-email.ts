@@ -1,10 +1,10 @@
+import api_error from "@/app/helper/api-error";
 import ejs from "ejs";
 import status from "http-status";
 import nodemailder from "nodemailer";
 import SMTPTransport from "nodemailer/lib/smtp-transport";
 import path from "path";
 import { env_config } from "../config/env-config";
-import api_error from "../helper/api-error";
 
 const transporter = nodemailder.createTransport({
   host: env_config.EMAIL_SENDER_SMTP_HOST,

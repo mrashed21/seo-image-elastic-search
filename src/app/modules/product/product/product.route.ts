@@ -1,4 +1,4 @@
-import { multer_upload } from "@/app/config/multer";
+import { multer_upload } from "@/config/multer";
 import { Router } from "express";
 
 const router: Router = Router();

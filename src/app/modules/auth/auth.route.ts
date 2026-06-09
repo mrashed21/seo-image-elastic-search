@@ -1,6 +1,6 @@
-import { multer_upload } from "@/app/config/multer";
 import { check_auth } from "@/app/middleware/auth-middleware";
 import { validate_request } from "@/app/middleware/validate-request";
+import { multer_upload } from "@/config/multer";
 import { Router } from "express";
 import { auth_controller } from "./auth.controller";
 import { user_role } from "./auth.interface";

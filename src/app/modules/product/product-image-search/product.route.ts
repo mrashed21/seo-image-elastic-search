@@ -1,4 +1,4 @@
-import { multer_upload } from "@/app/config/multer.js";
+import { multer_upload } from "@/config/multer";
 import express, { Router } from "express";
 import { multer_memory_upload } from "./multer-product";
 import { product_controller } from "./product.controller";
