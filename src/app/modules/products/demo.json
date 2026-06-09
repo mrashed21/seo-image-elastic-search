@@ -1,0 +1,156 @@
+{
+  "category_id": "6845c7f8b2f1c8a123456789",
+  "sub_category_id": "6845c7f8b2f1c8a123456790",
+  "product_owner_id": "6845c7f8b2f1c8a123456791",
+  "brand_id": "6845c7f8b2f1c8a123456792",
+  "product_name_en": "Apple iPhone 15 Pro Max 256GB Natural Titanium",
+  "product_name_bn": "অ্যাপল আইফোন ১৫ প্রো ম্যাক্স ২৫৬ জিবি ন্যাচারাল টাইটানিয়াম",
+  "product_slug": "apple-iphone-15-pro-max-256gb-natural-titanium",
+  "product_slug_en": "apple-iphone-15-pro-max-256gb-natural-titanium",
+  "product_slug_bn": "apple-iphone-15-pro-max-256gb-natural-titanium",
+  "product_sku": "APL-IP15PM-256-NT",
+  "product_barcode": "1234567890123",
+  "product_unit_name": "pcs",
+
+  "search_keywords": [
+    "iphone",
+    "iphone 15",
+    "iphone 15 pro max",
+    "apple mobile",
+    "smartphone",
+    "ios phone",
+    "256gb iphone"
+  ],
+
+  "product_tags": [
+    "apple",
+    "iphone",
+    "smartphone",
+    "mobile",
+    "ios",
+    "flagship"
+  ],
+
+  "is_variation": true,
+  "product_status": "active",
+  "is_featured": true,
+  "product_image": "https://cdn.example.com/products/iphone15-pro-max/main.jpg",
+  "image_caption": "Apple iPhone 15 Pro Max Natural Titanium Front View",
+  "image_alt_text": "Apple iPhone 15 Pro Max 256GB Natural Titanium",
+
+  "product_image_embedding": {
+    "vector": [0.12, 0.45, 0.88],
+    "model": "jina-clip-v2",
+    "generated_at": "2026-06-09T10:00:00.000Z",
+    "status": "done"
+  },
+
+  "other_images": [
+    {
+      "image": "https://cdn.example.com/products/iphone15-pro-max/back.jpg",
+      "caption": "Back View",
+      "alt_text": "Back side of iPhone 15 Pro Max",
+      "embedding": {
+        "vector": [0.22, 0.33, 0.55],
+        "model": "jina-clip-v2",
+        "generated_at": "2026-06-09T10:00:00.000Z",
+        "status": "done"
+      }
+    },
+    {
+      "image": "https://cdn.example.com/products/iphone15-pro-max/side.jpg",
+      "caption": "Side View",
+      "alt_text": "Side view of iPhone 15 Pro Max"
+    }
+  ],
+
+  "product_price": 189999,
+  "product_discount_price": 179999,
+  "product_buying_price": 165000,
+  "product_quantity": 45,
+  "alert_quantity": 5,
+  "sold_quantity": 120,
+
+  "variations": [
+    {
+      "variation_name": "256GB Natural Titanium",
+      "variation_sku": "APL-IP15PM-256-NT",
+      "variation_price": 189999,
+      "variation_discount_price": 179999,
+      "variation_buying_price": 165000,
+      "variation_quantity": 25,
+      "variation_image": "https://cdn.example.com/products/iphone15-pro-max/256-natural.jpg",
+      "image_caption": "256GB Natural Titanium Variant"
+    },
+    {
+      "variation_name": "512GB Black Titanium",
+      "variation_sku": "APL-IP15PM-512-BT",
+      "variation_price": 219999,
+      "variation_discount_price": 209999,
+      "variation_buying_price": 195000,
+      "variation_quantity": 20,
+      "variation_image": "https://cdn.example.com/products/iphone15-pro-max/512-black.jpg",
+      "image_caption": "512GB Black Titanium Variant"
+    }
+  ],
+
+  "attributes_details": [
+    {
+      "attribute_name": "Storage",
+      "attribute_values": ["256GB", "512GB"]
+    },
+    {
+      "attribute_name": "Color",
+      "attribute_values": ["Natural Titanium", "Black Titanium"]
+    }
+  ],
+
+  "short_description_en": "Apple iPhone 15 Pro Max with A17 Pro chip and titanium design.",
+  "short_description_bn": "A17 Pro চিপ এবং টাইটানিয়াম ডিজাইন সমৃদ্ধ আইফোন ১৫ প্রো ম্যাক্স।",
+  "product_description_en": "The iPhone 15 Pro Max features a titanium body, A17 Pro chip, advanced camera system, and all-day battery life.",
+  "product_description_bn": "আইফোন ১৫ প্রো ম্যাক্সে রয়েছে টাইটানিয়াম বডি, A17 Pro চিপ, উন্নত ক্যামেরা সিস্টেম এবং দীর্ঘস্থায়ী ব্যাটারি।",
+
+  "weight": 221,
+  "length": 159.9,
+  "width": 76.7,
+  "height": 8.25,
+  "average_rating": 4.8,
+  "review_count": 154,
+  "total_views": 12540,
+  "total_searches": 4320,
+  "total_sales": 120,
+  "total_wishlist": 890,
+
+  "meta": {
+    "meta_title": "Apple iPhone 15 Pro Max 256GB Natural Titanium Price in Bangladesh",
+    "meta_description": "Buy Apple iPhone 15 Pro Max 256GB Natural Titanium at the best price in Bangladesh with official warranty.",
+    "meta_keywords": [
+      "iphone 15 pro max",
+      "apple phone",
+      "iphone price in bangladesh",
+      "iphone 15"
+    ],
+
+    "og_title": "Apple iPhone 15 Pro Max",
+    "og_description": "Latest Apple flagship smartphone.",
+    "og_image": "https://cdn.example.com/products/iphone15-pro-max/main.jpg",
+    "canonical_url": "https://shop.example.com/product/apple-iphone-15-pro-max-256gb-natural-titanium",
+    "schema_product": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Apple iPhone 15 Pro Max"
+    },
+
+    "schema_breadcrumb": {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList"
+    }
+  },
+
+  "product_offer_id": "6845c7f8b2f1c8a123456793",
+  "admin_published_id": "6845c7f8b2f1c8a123456794",
+  "admin_updated_id": "6845c7f8b2f1c8a123456795",
+  "es_indexed": true,
+  "es_document_id": "product_iphone15pro_256_nt",
+  "es_indexed_at": "2026-06-09T10:00:00.000Z"
+}

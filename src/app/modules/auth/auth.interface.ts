@@ -1,0 +1,40 @@
+import { Types } from "mongoose";
+export const user_role = {
+  user: "user",
+  admin: "admin",
+} as const;
+
+export const user_status = {
+  active: "active",
+  deactive: "deactive",
+  banned: "banned",
+  deleted: "deleted",
+} as const;
+
+export interface IUserModel {
+  _id: Types.ObjectId;
+  user_name: string;
+  user_email: string | undefined;
+  email_verified?: boolean;
+  user_phone: string | undefined;
+  phone_verified?: boolean;
+  google_connected?: boolean;
+  google_id?: string | null;
+  user_password: string;
+  two_factor_enabled?: boolean;
+  two_factor_otp_method?: "email" | "phone";
+  pending_two_factor_method?: "email" | "phone" | null;
+  pending_email?: string | null;
+  pending_phone?: string | null;
+  user_role: (typeof user_role)[keyof typeof user_role];
+  user_area: string;
+  user_city: string;
+  user_country: string;
+  user_profile_image: string | null | undefined;
+  user_status: (typeof user_status)[keyof typeof user_status];
+  is_deleted: boolean;
+  deleted_at?: Date;
+  created_at?: Date;
+  updated_at?: Date;
+  password_changed_at?: Date;
+}
