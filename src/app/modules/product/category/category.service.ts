@@ -1,3 +1,4 @@
+import { QueryBuilder } from "@/app/builder/query-builder";
 import api_error from "@/app/helper/api-error";
 import { delete_file } from "@/config/file-uploder";
 import httpStatus from "http-status";
@@ -173,6 +174,31 @@ export const category_service = {
       statusCode: httpStatus.OK,
       message: "Category deleted successfully",
       data: {},
+    };
+  },
+
+  //   get all category with pagination and search and filter (only status active)
+  get: async (query: any) => {
+    const qb = new QueryBuilder(query);
+
+    qb.search(query.search, ["category_name"]);
+
+    qb.status(query.status);
+
+    const categories = await CategoryModel.find(qb.filter)
+      .sort(Object.keys(qb.sort).length ? qb.sort : { category_serial: 1 })
+      .skip(qb.skip)
+      .limit(qb.limit)
+      .lean();
+
+    const total = await CategoryModel.countDocuments(qb.filter);
+
+    return {
+      success: true,
+      statusCode: httpStatus.OK,
+      message: "Categories retrieved successfully",
+      data: categories,
+      meta: qb.getMeta(total),
     };
   },
 };

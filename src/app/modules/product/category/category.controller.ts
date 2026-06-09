@@ -63,4 +63,16 @@ export const category_controller = {
       data: result.data,
     });
   }),
+
+  //   get all category
+  get: catch_async(async (req: Request, res: Response) => {
+    const result = await category_service.get(req.query);
+    send_response(res, {
+      status_code: status.OK,
+      success: true,
+      message: result.message,
+      data: result.data,
+      meta: result.meta,
+    });
+  }),
 };
