@@ -1,7 +1,9 @@
 import api_error from "@/app/helper/api-error";
+import { delete_file } from "@/config/file-uploder";
 import httpStatus from "http-status";
 import CategoryModel from "./category.model";
 export const category_service = {
+  // create category
   create: async (payload: any) => {
     // Create category logic here
 
@@ -68,6 +70,96 @@ export const category_service = {
       success: true,
       statusCode: httpStatus.CREATED,
       message: "Category created successfully",
+      data: {},
+    };
+  },
+
+  //   update category
+  update: async (payload: any) => {
+    const { _id, updated_id, category_image } = payload;
+
+    const category = await CategoryModel.findById(_id);
+
+    if (!category) {
+      throw new api_error(httpStatus.NOT_FOUND, "Category not found");
+    }
+
+    // duplicate check only when field exists
+    if (payload.category_name) {
+      const isExist = await CategoryModel.findOne({
+        category_name: payload.category_name,
+        _id: { $ne: _id },
+      });
+
+      if (isExist) {
+        throw new api_error(
+          httpStatus.BAD_REQUEST,
+          "Category name already exists",
+        );
+      }
+    }
+
+    if (payload.category_slug) {
+      const isSlugExist = await CategoryModel.findOne({
+        category_slug: payload.category_slug,
+        _id: { $ne: _id },
+      });
+
+      if (isSlugExist) {
+        throw new api_error(
+          httpStatus.BAD_REQUEST,
+          "Category slug already exists",
+        );
+      }
+    }
+
+    if (payload.category_serial !== undefined) {
+      const isSerialExist = await CategoryModel.findOne({
+        category_serial: payload.category_serial,
+        _id: { $ne: _id },
+      });
+
+      if (isSerialExist) {
+        throw new api_error(
+          httpStatus.BAD_REQUEST,
+          "Category serial already exists",
+        );
+      }
+    }
+
+    // image changed
+    if (category_image && category.category_image) {
+      await delete_file(category.category_image);
+    }
+
+    const updateData: Record<string, any> = {};
+
+    Object.keys(payload).forEach((key) => {
+      if (payload[key] !== undefined) {
+        updateData[key] = payload[key];
+      }
+    });
+
+    updateData.updated_id = updated_id;
+
+    Object.assign(category, updateData);
+
+    await category.save();
+
+    return {
+      success: true,
+      statusCode: httpStatus.OK,
+      message: "Category updated successfully",
+      data: {},
+    };
+  },
+  //   delete category
+  delete: async (payload: any) => {
+    // Delete category logic here
+    return {
+      success: true,
+      statusCode: httpStatus.OK,
+      message: "Category deleted successfully",
       data: {},
     };
   },
