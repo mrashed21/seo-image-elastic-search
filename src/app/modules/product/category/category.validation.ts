@@ -41,13 +41,8 @@ export const category_validation = {
   }),
 
   delete: z.object({
-    body: z.object({
-      _id: z.string({
-        message: "_id is required",
-      }),
-      category_image_key: z.string({
-        message: "category_image_key is required",
-      }),
+    _id: z.string({
+      message: "_id is required",
     }),
   }),
 };

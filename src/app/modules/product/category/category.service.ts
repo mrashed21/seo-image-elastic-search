@@ -155,6 +155,18 @@ export const category_service = {
   },
   //   delete category
   delete: async (payload: any) => {
+    const { _id } = payload;
+    const category = await CategoryModel.findById(_id);
+
+    if (!category) {
+      throw new api_error(httpStatus.NOT_FOUND, "Category not found");
+    }
+    // delete category image from storage
+    if (category.category_image) {
+      await delete_file(category.category_image);
+    }
+
+    await category.deleteOne();
     // Delete category logic here
     return {
       success: true,
