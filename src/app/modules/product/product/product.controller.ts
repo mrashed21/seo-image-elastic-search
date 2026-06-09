@@ -1,10 +1,11 @@
 import catch_async from "@/app/helper/catch-async";
 import send_response from "@/app/helper/send-response";
+import { Request, Response } from "express";
 import status from "http-status";
 import { product_service } from "./product.service";
 
 export const product_controller = {
-  create: catch_async(async (req, res) => {
+  create: catch_async(async (req: Request, res: Response) => {
     const payload = {
       ...req.body,
     };

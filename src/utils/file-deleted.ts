@@ -5,40 +5,52 @@ export const file_delete = async (req: Request) => {
   try {
     const filesToDelete: string[] = [];
 
-    if (req.file && req.file?.path) {
+    // single file upload
+    if (req.file?.path) {
       filesToDelete.push(req.file.path);
-    } else if (
+    }
+
+    // upload.fields(...)
+    if (
       req.files &&
       typeof req.files === "object" &&
       !Array.isArray(req.files)
     ) {
-      // [ [{path : "rfrf"}] , [{}, {}]]
       Object.values(req.files).forEach((fileArray) => {
         if (Array.isArray(fileArray)) {
           fileArray.forEach((file) => {
-            if (file.path) {
+            if (file?.path) {
               filesToDelete.push(file.path);
             }
           });
         }
       });
-    } else if (req.files && Array.isArray(req.files) && req.files.length > 0) {
+    }
+
+    // upload.array(...) / upload.any(...)
+    if (Array.isArray(req.files)) {
       req.files.forEach((file) => {
-        if (file.path) {
+        if (file?.path) {
           filesToDelete.push(file.path);
         }
       });
     }
 
-    if (filesToDelete.length > 0) {
-      await Promise.all(filesToDelete.map((url) => delete_file(url)));
-      console.log(
-        `\nDeleted ${filesToDelete.length} uploaded file(s) from Cloudinary due to an error during request processing.\n`,
-      );
+    // remove duplicate urls
+    const uniqueFiles = [...new Set(filesToDelete)];
+
+    if (uniqueFiles.length === 0) {
+      return;
     }
-  } catch (error: any) {
+
+    await Promise.allSettled(uniqueFiles.map((url) => delete_file(url)));
+
+    console.log(
+      `\n🗑️ Deleted ${uniqueFiles.length} uploaded file(s) from Cloudinary due to request failure.\n`,
+    );
+  } catch (error) {
     console.error(
-      "Error deleting uploaded files from Global Error Handler",
+      "\n❌ Error deleting uploaded files from Cloudinary\n",
       error,
     );
   }
