@@ -1,13 +1,10 @@
 {
   "category_id": "6845c7f8b2f1c8a123456789",
   "sub_category_id": "6845c7f8b2f1c8a123456790",
-  "product_owner_id": "6845c7f8b2f1c8a123456791",
   "brand_id": "6845c7f8b2f1c8a123456792",
   "product_name_en": "Apple iPhone 15 Pro Max 256GB Natural Titanium",
   "product_name_bn": "অ্যাপল আইফোন ১৫ প্রো ম্যাক্স ২৫৬ জিবি ন্যাচারাল টাইটানিয়াম",
   "product_slug": "apple-iphone-15-pro-max-256gb-natural-titanium",
-  "product_slug_en": "apple-iphone-15-pro-max-256gb-natural-titanium",
-  "product_slug_bn": "apple-iphone-15-pro-max-256gb-natural-titanium",
   "product_sku": "APL-IP15PM-256-NT",
   "product_barcode": "1234567890123",
   "product_unit_name": "pcs",
@@ -146,8 +143,6 @@
       "@type": "BreadcrumbList"
     }
   },
-
-  "product_offer_id": "6845c7f8b2f1c8a123456793",
   "admin_published_id": "6845c7f8b2f1c8a123456794",
   "admin_updated_id": "6845c7f8b2f1c8a123456795",
   "es_indexed": true,

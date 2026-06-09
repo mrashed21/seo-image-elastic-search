@@ -6,7 +6,7 @@ import {
   IProductInterface,
   IProductMeta,
   IProductVariation,
-} from "./produt.interface";
+} from "./product.interface";
 
 // Embedding Schema
 
@@ -161,12 +161,6 @@ const ProductSchema = new Schema<IProductInterface>(
       index: true,
     },
 
-    product_owner_id: {
-      type: Schema.Types.ObjectId,
-      ref: "Merchant",
-      index: true,
-    },
-
     brand_id: {
       type: Schema.Types.ObjectId,
       ref: "Brand",
@@ -195,10 +189,6 @@ const ProductSchema = new Schema<IProductInterface>(
       trim: true,
       index: true,
     },
-
-    product_slug_en: String,
-
-    product_slug_bn: String,
 
     product_sku: {
       type: String,
@@ -373,13 +363,6 @@ const ProductSchema = new Schema<IProductInterface>(
     meta: {
       type: ProductMetaSchema,
       default: {},
-    },
-
-    // Offer
-
-    product_offer_id: {
-      type: Schema.Types.ObjectId,
-      ref: "Offer",
     },
 
     // Admin Tracking

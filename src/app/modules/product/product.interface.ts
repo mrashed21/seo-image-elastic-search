@@ -58,14 +58,11 @@ export interface IProductInterface {
   _id?: Types.ObjectId;
   category_id: Types.ObjectId;
   sub_category_id?: Types.ObjectId;
-  product_owner_id?: Types.ObjectId;
   brand_id?: Types.ObjectId;
 
   product_name_en: string;
   product_name_bn?: string;
   product_slug: string;
-  product_slug_en?: string;
-  product_slug_bn?: string;
   product_sku?: string;
   product_barcode?: string;
   product_bar_code_image?: string;
@@ -140,10 +137,6 @@ export interface IProductInterface {
   // SEO
 
   meta?: IProductMeta;
-
-  // Offer
-
-  product_offer_id?: Types.ObjectId;
 
   // Admin Tracking
 

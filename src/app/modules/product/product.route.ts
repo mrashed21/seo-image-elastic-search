@@ -5,7 +5,7 @@ const router: Router = Router();
 
 router.route("/").post(
   multer_upload.fields([
-    { name: "main_image", maxCount: 1 },
+    { name: "product_image", maxCount: 1 },
     { name: "other_images", maxCount: 10 },
     { name: "variation_images", maxCount: 100 },
   ]),
