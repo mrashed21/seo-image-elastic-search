@@ -183,7 +183,7 @@ export const category_service = {
 
     qb.search(query.search, ["category_name"]);
 
-    qb.status("active");
+    qb.filter.sub_category_status = "active";
 
     const categories = await CategoryModel.find(qb.filter)
       .sort(Object.keys(qb.sort).length ? qb.sort : { category_serial: 1 })
@@ -208,7 +208,9 @@ export const category_service = {
 
     qb.search(query.search, ["category_name"]);
 
-    qb.status(query.status);
+    if (query.status) {
+      qb.filter.category_status = query.status;
+    }
     const categories = await CategoryModel.find(qb.filter)
       .sort(Object.keys(qb.sort).length ? qb.sort : { category_serial: 1 })
       .skip(qb.skip)
