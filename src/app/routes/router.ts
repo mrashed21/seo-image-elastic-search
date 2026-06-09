@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { auth_router } from "../modules/auth/auth.route";
 import { health_router } from "../modules/health/health.route";
-import { product_router } from "../modules/product/product.route";
+import { product_router } from "../modules/product-image-search/product.route";
 
 const router: Router = Router();
 const modelRouters = [

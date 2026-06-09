@@ -1,23 +1,14 @@
-import { multer_upload } from "@/app/config/multer.js";
-import express, { Router } from "express";
-import { multer_memory_upload } from "./multer-product";
-import { product_controller } from "./product.controller";
+import { multer_upload } from "@/app/config/multer";
+import { Router } from "express";
 
-const router: Router = express.Router();
+const router: Router = Router();
 
-router.route("/get-all").get(product_controller.getAllProducts);
+router.route("/").post(
+  multer_upload.fields([
+    { name: "main_image", maxCount: 1 },
+    { name: "other_images", maxCount: 10 },
+    { name: "variation_images", maxCount: 100 },
+  ]),
+);
 
-// product create — disk storage (image path save করতে হবে)
-router
-  .route("/create")
-  .post(multer_upload.single("image"), product_controller.createProduct);
-
-// image search — memory storage (temp file disk এ যাবেই না)
-router
-  .route("/search-image")
-  .post(multer_memory_upload.single("image"), product_controller.searchByImage);
-
-// admin: failed embedding retry
-router.post("/retry-embeddings", product_controller.retryEmbeddings);
-
-export const product_router = router;
+export const products_router = router;
