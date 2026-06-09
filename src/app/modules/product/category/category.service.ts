@@ -183,8 +183,32 @@ export const category_service = {
 
     qb.search(query.search, ["category_name"]);
 
-    qb.status(query.status);
+    qb.status("active");
 
+    const categories = await CategoryModel.find(qb.filter)
+      .sort(Object.keys(qb.sort).length ? qb.sort : { category_serial: 1 })
+      .skip(qb.skip)
+      .limit(qb.limit)
+      .lean();
+
+    const total = await CategoryModel.countDocuments(qb.filter);
+
+    return {
+      success: true,
+      statusCode: httpStatus.OK,
+      message: "Categories retrieved successfully",
+      data: categories,
+      meta: qb.getMeta(total),
+    };
+  },
+
+  //   get all category with pagination and search and filter for admin (status active and in-active)
+  admin_get: async (query: any) => {
+    const qb = new QueryBuilder(query);
+
+    qb.search(query.search, ["category_name"]);
+
+    qb.status(query.status);
     const categories = await CategoryModel.find(qb.filter)
       .sort(Object.keys(qb.sort).length ? qb.sort : { category_serial: 1 })
       .skip(qb.skip)
