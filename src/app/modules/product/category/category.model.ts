@@ -26,7 +26,7 @@ const categorySchema = new Schema<ICategoryInterface>(
     },
     category_serial: {
       type: Number,
-      required: true,
+      required: false,
     },
 
     publisher_id: {

@@ -51,9 +51,8 @@ export const category_service = {
       const maxSerialCategory = await CategoryModel.findOne().sort({
         category_serial: -1,
       });
-      categorySerial = maxSerialCategory
-        ? maxSerialCategory.category_serial + 1
-        : 1;
+      const maxSerial = maxSerialCategory?.category_serial ?? 0;
+      categorySerial = maxSerial + 1;
     }
 
     // Create the category

@@ -7,9 +7,11 @@ export const category_validation = {
     }),
 
     category_image: z.any().optional(),
-    category_serial: z.coerce.number({
-      message: "Category Serial is required",
-    }),
+    category_serial: z.coerce
+      .number({
+        message: "Only number is allowed for category serial",
+      })
+      .optional(),
     category_status: z.enum(["active", "in-active"], {
       message: "Category Status is required",
     }),
