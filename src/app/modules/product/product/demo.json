@@ -144,7 +144,7 @@
     }
   },
   "admin_published_id": "6845c7f8b2f1c8a123456794",
-  "admin_updated_id": "6845c7f8b2f1c8a123456795",
+  "admin_updated_by": "6845c7f8b2f1c8a123456795",
   "es_indexed": true,
   "es_document_id": "product_iphone15pro_256_nt",
   "es_indexed_at": "2026-06-09T10:00:00.000Z"

@@ -372,7 +372,7 @@ const ProductSchema = new Schema<IProductInterface>(
       ref: "Admin",
     },
 
-    admin_updated_id: {
+    admin_updated_by: {
       type: Schema.Types.ObjectId,
       ref: "Admin",
     },

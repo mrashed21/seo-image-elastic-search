@@ -29,12 +29,12 @@ const brandSchema = new Schema<IBrandInterface>(
       required: false,
     },
 
-    publisher_id: {
+    created_by: {
       type: Schema.Types.ObjectId,
       ref: "user",
       required: true,
     },
-    updated_id: {
+    updated_by: {
       type: Schema.Types.ObjectId,
       ref: "user",
     },

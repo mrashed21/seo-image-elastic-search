@@ -8,7 +8,7 @@ export const brand_service = {
   create: async (payload: any) => {
     // Create brand logic here
 
-    const { brand_name, brand_slug, brand_image, brand_serial, publisher_id } =
+    const { brand_name, brand_slug, brand_image, brand_serial, created_by } =
       payload;
 
     // checke duplicate brand name
@@ -53,7 +53,7 @@ export const brand_service = {
       brand_slug,
       brand_image,
       brand_serial: brandSerial,
-      publisher_id,
+      created_by,
     });
     await brand.save();
     return {
@@ -66,7 +66,7 @@ export const brand_service = {
 
   //   update brand
   update: async (payload: any) => {
-    const { _id, updated_id, brand_image } = payload;
+    const { _id, updated_by, brand_image } = payload;
 
     const brand = await BrandModel.findById(_id);
 
@@ -130,7 +130,7 @@ export const brand_service = {
       }
     });
 
-    updateData.updated_id = updated_id;
+    updateData.updated_by = updated_by;
 
     Object.assign(brand, updateData);
 

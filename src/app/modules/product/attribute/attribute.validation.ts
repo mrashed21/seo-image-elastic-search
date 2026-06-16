@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const AttributeValidation = {
+export const attribute_validation = {
   create: z.object({
     attribute_name: z.string({
       message: "Attribute Name is required",

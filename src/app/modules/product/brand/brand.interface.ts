@@ -8,8 +8,8 @@ export interface IBrandInterface {
   brand_image: string;
   brand_status?: "active" | "in-active";
   brand_serial?: number;
-  publisher_id: Types.ObjectId | IUserModel;
-  updated_id?: Types.ObjectId;
+  created_by: Types.ObjectId | IUserModel;
+  updated_by?: Types.ObjectId;
 }
 
 export const brandSearchableField = ["brand_name", "brand_status"];

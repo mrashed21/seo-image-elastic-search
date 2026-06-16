@@ -34,12 +34,12 @@ const subCategorySchema = new Schema<ISubCategoryInterface>(
       ref: "categories",
       required: true,
     },
-    publisher_id: {
+    created_by: {
       type: Schema.Types.ObjectId,
       ref: "user",
       required: true,
     },
-    updated_id: {
+    updated_by: {
       type: Schema.Types.ObjectId,
       ref: "user",
     },

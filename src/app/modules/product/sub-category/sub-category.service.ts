@@ -16,7 +16,7 @@ export const sub_category_service = {
       sub_category_image,
       sub_category_serial,
       category_id,
-      publisher_id,
+      created_by,
     } = payload;
 
     // checke duplicate sub category name
@@ -83,7 +83,7 @@ export const sub_category_service = {
       sub_category_image,
       sub_category_serial: sub_categorySerial,
       category_id,
-      publisher_id,
+      created_by,
     });
     await sub_category.save();
     return {
@@ -96,7 +96,7 @@ export const sub_category_service = {
 
   //   update sub category
   update: async (payload: any) => {
-    const { _id, updated_id, sub_category_image, category_id } = payload;
+    const { _id, updated_by, sub_category_image, category_id } = payload;
 
     const sub_category = await SubCategoryModel.findById(_id);
 
@@ -168,7 +168,7 @@ export const sub_category_service = {
       }
     });
 
-    updateData.updated_id = updated_id;
+    updateData.updated_by = updated_by;
 
     Object.assign(sub_category, updateData);
 

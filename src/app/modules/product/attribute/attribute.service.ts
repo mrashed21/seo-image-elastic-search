@@ -1,0 +1,41 @@
+export const attribute_service = {
+  // create attribute
+  create: async (payload: any) => {
+    return {
+      message: "Attribute created successfully",
+      data: payload,
+    };
+  },
+
+  // update attribute
+  update: async (payload: any) => {
+    return {
+      message: "Attribute updated successfully",
+      data: payload,
+    };
+  },
+
+  // delete attribute
+  delete: async (payload: any) => {
+    return {
+      message: "Attribute deleted successfully",
+      data: payload,
+    };
+  },
+
+  // get all attribute for admin
+  admin: async () => {
+    return {
+      message: "Attributes retrieved successfully",
+      data: [],
+    };
+  },
+
+  // get all attribute for user
+  get: async () => {
+    return {
+      message: "Attributes retrieved successfully",
+      data: [],
+    };
+  },
+};

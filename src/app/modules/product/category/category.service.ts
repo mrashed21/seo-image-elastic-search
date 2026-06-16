@@ -13,7 +13,7 @@ export const category_service = {
       category_slug,
       category_image,
       category_serial,
-      publisher_id,
+      created_by,
     } = payload;
 
     // checke duplicate category name
@@ -64,7 +64,7 @@ export const category_service = {
       category_slug,
       category_image,
       category_serial: categorySerial,
-      publisher_id,
+      created_by,
     });
     await category.save();
     return {
@@ -77,7 +77,7 @@ export const category_service = {
 
   //   update category
   update: async (payload: any) => {
-    const { _id, updated_id, category_image } = payload;
+    const { _id, updated_by, category_image } = payload;
 
     const category = await CategoryModel.findById(_id);
 
@@ -141,7 +141,7 @@ export const category_service = {
       }
     });
 
-    updateData.updated_id = updated_id;
+    updateData.updated_by = updated_by;
 
     Object.assign(category, updateData);
 

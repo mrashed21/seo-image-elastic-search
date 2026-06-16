@@ -141,7 +141,7 @@ export interface IProductInterface {
   // Admin Tracking
 
   admin_published_id?: Types.ObjectId;
-  admin_updated_id?: Types.ObjectId;
+  admin_updated_by?: Types.ObjectId;
 
   // Elasticsearch
 

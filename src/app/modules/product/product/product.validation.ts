@@ -213,7 +213,7 @@ export const create_product_schema = z
     meta: product_meta_schema.optional(),
 
     admin_published_id: optional_object_id_field(),
-    admin_updated_id: optional_object_id_field(),
+    admin_updated_by: optional_object_id_field(),
 
     es_indexed: zod_boolean_from_formdata.optional().default(false),
     es_document_id: optional_text_field(255),

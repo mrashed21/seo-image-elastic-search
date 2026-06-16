@@ -11,7 +11,7 @@ export const brand_controller = {
     const payload = {
       ...req.body,
     };
-    payload.publisher_id = req.user?._id;
+    payload.created_by = req.user?._id;
     payload.brand_slug = generate_slug(payload.brand_name);
 
     if (req.file?.path) {
@@ -32,7 +32,7 @@ export const brand_controller = {
     const payload = {
       ...req.body,
     };
-    payload.updated_id = req.user?._id;
+    payload.updated_by = req.user?._id;
     if (req.body.brand_name) {
       payload.brand_slug = generate_slug(payload.brand_name);
     }

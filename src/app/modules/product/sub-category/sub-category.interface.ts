@@ -10,8 +10,8 @@ export interface ISubCategoryInterface {
   sub_category_status?: "active" | "in-active";
   sub_category_serial?: number;
   category_id: Types.ObjectId | ICategoryInterface;
-  publisher_id: Types.ObjectId | IUserModel;
-  updated_id?: Types.ObjectId;
+  created_by: Types.ObjectId | IUserModel;
+  updated_by?: Types.ObjectId;
 }
 
 export const subCategorySearchableField = [

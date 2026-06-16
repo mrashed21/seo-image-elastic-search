@@ -1,5 +1,5 @@
 import { Types } from "mongoose";
-import { IUserModel } from "../auth/auth.interface";
+import { IUserModel } from "../../auth/auth.interface";
 
 export interface IAttributeInterface {
   _id?: any;
@@ -7,8 +7,8 @@ export interface IAttributeInterface {
   attribute_status?: "active" | "in-active";
   attribute_serial: number;
   attribute_value: string[];
-  publisher_id: Types.ObjectId | IUserModel;
-  updated_id?: Types.ObjectId | IUserModel;
+  created_by: Types.ObjectId | IUserModel;
+  updated_by?: Types.ObjectId | IUserModel;
 }
 
 export const attributeSearchableField = ["attribute_name", "attribute_status"];
