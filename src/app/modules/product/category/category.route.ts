@@ -29,8 +29,7 @@ router
     category_controller.delete,
   );
 
-
-  router
+router
   .route("/admin")
-  .get(check_auth(user_role.user), category_controller.admin_get)
+  .get(check_auth(user_role.user), category_controller.admin);
 export const category_router = router;

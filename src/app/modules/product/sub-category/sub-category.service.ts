@@ -88,7 +88,7 @@ export const sub_category_service = {
     await sub_category.save();
     return {
       success: true,
-      statusCode: httpStatus.CREATED,
+      status_code: httpStatus.CREATED,
       message: "Sub Category created successfully",
       data: {},
     };
@@ -176,7 +176,7 @@ export const sub_category_service = {
 
     return {
       success: true,
-      statusCode: httpStatus.OK,
+      status_code: httpStatus.OK,
       message: "Sub Category updated successfully",
       data: {},
     };
@@ -198,7 +198,7 @@ export const sub_category_service = {
     // Delete sub category logic here
     return {
       success: true,
-      statusCode: httpStatus.OK,
+      status_code: httpStatus.OK,
       message: "Sub Category deleted successfully",
       data: {},
     };
@@ -222,7 +222,7 @@ export const sub_category_service = {
 
     return {
       success: true,
-      statusCode: httpStatus.OK,
+      status_code: httpStatus.OK,
       message: "Sub Categories retrieved successfully",
       data: sub_categories,
       meta: qb.getMeta(total),
@@ -230,7 +230,7 @@ export const sub_category_service = {
   },
 
   //   get all sub category with pagination and search and filter for admin (status active and in-active)
-  admin_get: async (query: any) => {
+  admin: async (query: any) => {
     const qb = new QueryBuilder(query);
 
     qb.search(query.search, ["sub_category_name"]);
@@ -249,7 +249,7 @@ export const sub_category_service = {
 
     return {
       success: true,
-      statusCode: httpStatus.OK,
+      status_code: httpStatus.OK,
       message: "Sub Categories retrieved successfully",
       data: sub_categories,
       meta: qb.getMeta(total),

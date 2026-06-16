@@ -86,7 +86,7 @@ export const auth_controller = {
 
     // ! response
     // forward requires_2fa and method when applicable
-    res.status(result.statusCode).json({
+    res.status(result.status_code).json({
       success: result.success,
       message: result.message,
       data: {
@@ -110,7 +110,7 @@ export const auth_controller = {
     token_utils.set_cookie.access(res, result.data.access_token);
 
     send_response(res, {
-      status_code: result.statusCode,
+      status_code: result.status_code,
       success: result.success,
       message: result.message,
       data: {
@@ -129,7 +129,7 @@ export const auth_controller = {
     // ! set access token cookie
     token_utils.set_cookie.access(res, result.data.access_token);
     // ! response
-    res.status(result.statusCode).json({
+    res.status(result.status_code).json({
       success: result.success,
       message: result.message,
       data: {

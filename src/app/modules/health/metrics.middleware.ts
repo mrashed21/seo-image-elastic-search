@@ -9,7 +9,7 @@ export const metricsMiddleware = (
   metricsService.incrementRequests();
 
   res.on("finish", () => {
-    if (res.statusCode >= 400) {
+    if (res.status_code >= 400) {
       metricsService.incrementErrors();
     }
   });

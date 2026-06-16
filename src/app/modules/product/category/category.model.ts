@@ -27,6 +27,7 @@ const categorySchema = new Schema<ICategoryInterface>(
     category_serial: {
       type: Number,
       required: false,
+      unique: true,
     },
 
     created_by: {
@@ -44,6 +45,6 @@ const categorySchema = new Schema<ICategoryInterface>(
   },
 );
 
-const CategoryModel = model<ICategoryInterface>("categories", categorySchema);
+const category_model = model<ICategoryInterface>("categories", categorySchema);
 
-export default CategoryModel;
+export default category_model;

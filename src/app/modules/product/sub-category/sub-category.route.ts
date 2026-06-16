@@ -31,5 +31,5 @@ router
 
 router
   .route("/admin")
-  .get(check_auth(user_role.user), sub_category_controller.admin_get);
+  .get(check_auth(user_role.user), sub_category_controller.admin);
 export const sub_category_router = router;

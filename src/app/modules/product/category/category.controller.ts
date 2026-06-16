@@ -77,8 +77,8 @@ export const category_controller = {
   }),
 
   //   get admin category
-  admin_get: catch_async(async (req: Request, res: Response) => {
-    const result = await category_service.admin_get(req.query);
+  admin: catch_async(async (req: Request, res: Response) => {
+    const result = await category_service.admin(req.query);
     send_response(res, {
       status_code: status.OK,
       success: true,

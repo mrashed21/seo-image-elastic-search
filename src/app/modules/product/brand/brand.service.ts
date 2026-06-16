@@ -58,7 +58,7 @@ export const brand_service = {
     await brand.save();
     return {
       success: true,
-      statusCode: httpStatus.CREATED,
+      status_code: httpStatus.CREATED,
       message: "Brand created successfully",
       data: {},
     };
@@ -138,7 +138,7 @@ export const brand_service = {
 
     return {
       success: true,
-      statusCode: httpStatus.OK,
+      status_code: httpStatus.OK,
       message: "Brand updated successfully",
       data: {},
     };
@@ -160,7 +160,7 @@ export const brand_service = {
     // Delete brand logic here
     return {
       success: true,
-      statusCode: httpStatus.OK,
+      status_code: httpStatus.OK,
       message: "Brand deleted successfully",
       data: {},
     };
@@ -184,7 +184,7 @@ export const brand_service = {
 
     return {
       success: true,
-      statusCode: httpStatus.OK,
+      status_code: httpStatus.OK,
       message: "Brands retrieved successfully",
       data: brands,
       meta: qb.getMeta(total),
@@ -192,7 +192,7 @@ export const brand_service = {
   },
 
   //   get all brand with pagination and search and filter for admin (status active and in-active)
-  admin_get: async (query: any) => {
+  admin: async (query: any) => {
     const qb = new QueryBuilder(query);
 
     qb.search(query.search, ["brand_name"]);
@@ -210,7 +210,7 @@ export const brand_service = {
 
     return {
       success: true,
-      statusCode: httpStatus.OK,
+      status_code: httpStatus.OK,
       message: "Brands retrieved successfully",
       data: brands,
       meta: qb.getMeta(total),

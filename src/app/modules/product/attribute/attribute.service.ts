@@ -1,9 +1,13 @@
+import httpStatus from "http-status";
 export const attribute_service = {
   // create attribute
   create: async (payload: any) => {
+    
     return {
-      message: "Attribute created successfully",
-      data: payload,
+      success: true,
+      status_code: httpStatus.CREATED,
+      message: "Brand created successfully",
+      data: {},
     };
   },
 

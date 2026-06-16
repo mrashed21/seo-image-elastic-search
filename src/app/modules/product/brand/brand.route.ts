@@ -29,7 +29,5 @@ router
     brand_controller.delete,
   );
 
-router
-  .route("/admin")
-  .get(check_auth(user_role.user), brand_controller.admin_get);
+router.route("/admin").get(check_auth(user_role.user), brand_controller.admin);
 export const brand_router = router;

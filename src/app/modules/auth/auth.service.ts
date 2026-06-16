@@ -152,7 +152,7 @@ export const auth_service = {
     // ! response
     return {
       success: true,
-      statusCode: httpStatus.CREATED,
+      status_code: httpStatus.CREATED,
       message: "User registered successfully",
       data: {
         user: build_public_user(created_user),
@@ -238,7 +238,7 @@ export const auth_service = {
     // ! response
     return {
       success: true,
-      statusCode: httpStatus.OK,
+      status_code: httpStatus.OK,
       message: "OTP verified successfully",
       data: {
         access_token,
@@ -319,7 +319,7 @@ export const auth_service = {
     // ! response
     return {
       success: true,
-      statusCode: httpStatus.OK,
+      status_code: httpStatus.OK,
       message: "OTP resend successfully",
     };
   },
@@ -428,7 +428,7 @@ export const auth_service = {
 
       return {
         success: true,
-        statusCode: httpStatus.OK,
+        status_code: httpStatus.OK,
         message: "2FA OTP sent successfully",
         data: {
           requires_2fa: true,
@@ -447,7 +447,7 @@ export const auth_service = {
     // ! response
     return {
       success: true,
-      statusCode: httpStatus.OK,
+      status_code: httpStatus.OK,
       message: "Login successful",
       data: {
         requires_2fa: false,
@@ -529,7 +529,7 @@ export const auth_service = {
 
     return {
       success: true,
-      statusCode: httpStatus.OK,
+      status_code: httpStatus.OK,
       message: "2FA verification successful",
       data: {
         access_token,
@@ -584,7 +584,7 @@ export const auth_service = {
 
     return {
       success: true,
-      statusCode: httpStatus.OK,
+      status_code: httpStatus.OK,
       message: "Token refreshed successfully",
       data: {
         access_token: token_utils.create.access(jwt_payload),
@@ -612,7 +612,7 @@ export const auth_service = {
     // ! response
     return {
       success: true,
-      statusCode: httpStatus.OK,
+      status_code: httpStatus.OK,
       message: "User retrieved successfully",
 
       data: {
